@@ -1,5 +1,6 @@
 package com.example.android.quizapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -9,9 +10,19 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    int score = 0;
-    boolean isQuestion1Correct;
-    boolean isQuestion4Correct;
+    int totalQuestions = 10;
+    int correctAnswers = 0;
+    int question1Score = 0;
+    int question2Score = 0;
+    int question3Score = 0;
+    int question4Score = 0;
+    int question5Score = 0;
+    int question6Score = 0;
+    int question7Score = 0;
+    int question8Score = 0;
+    int question9Score = 0;
+    int question10Score = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,115 +30,200 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+
     /**
-     * This method is going to be called when user submits answers
+     * Called from the onClick for the submit_answers_button in activity_main.xml
+     * <p>
+     * calls the displayMessage method to display the Toast message
      */
-    public void submitAnswer(View view) {
-        score = 0;
-
-        score = isQuestion1Correct ? ++score : score;
-        score = isQuizQuestion2Correct() ? ++score : score;
-        score = isQuizQuestion3Correct() ? ++score : score;
-        score = isQuestion4Correct ? ++score : score;
-        score = isQuizQuestion5Correct() ? ++score : score;
-
-        Toast.makeText(this, "Your Score for the quiz: " + score, Toast.LENGTH_SHORT).show();
-
+    public void submitAnswers(View view) {
+        // Calls the display method
+        displayMessage();
     }
 
-    /**
-     * quiz question 3
-     */
-    public boolean isQuizQuestion3Correct() {
-        EditText textInput = (EditText) findViewById(R.id.question3_edittext);
-        boolean answerEntered = textInput.getText().toString().equalsIgnoreCase("electrons");
-        if (answerEntered) {
-            return true;
+    // Checks the radioButton answers for question 1
+    public void question1RadioButton(View view) {
+        // Import radio buttons for question 1
+        RadioButton questionOneCorrectRB = findViewById(R.id.questionOneCorrect);
+
+        // Check if correct RadioButton is clicked
+        if (questionOneCorrectRB.isChecked()) {
+            question1Score = 1;
         } else {
-            return false;
+            question1Score = 0;
         }
+    }
+
+    // Checks the radioButton answers for question 2
+    public void question2RadioButton(View view) {
+        // Import correct radio button for question 2
+        RadioButton questionTwoCorrectRB = findViewById(R.id.questionTwoCorrect);
+
+        // Check if correct RadioButton was clicked
+        if (questionTwoCorrectRB.isChecked()) {
+            question2Score = 1;
+        } else {
+            question2Score = 0;
+        }
+    }
+
+    // Checks the EditText answers for question 3
+    public int question3EditTextView() {
+        // Import radio buttons for question 3
+        EditText questionThreeEditText = findViewById(R.id.question3EditText);
+
+        // Creates a string variable to hold the text entered into
+        String questionThreeAnswer = questionThreeEditText.getText().toString();
+        questionThreeAnswer = questionThreeAnswer.toLowerCase();
+
+
+        // Checks if answer is correct and if so, adds 1 to correct answer, otherwise it stays as 0 for correct answer
+        if ((questionThreeAnswer.equals("Fermi"))){
+            question3Score = 1;
+        } else {
+            question3Score = 0;
+        }
+
+        return question3Score;
+    }
+
+    // Checks the radioButton answers for question 4
+    public void question4CheckBox(View view) {
+        // Import correct checkboxes for question 4
+        CheckBox questionFourCorrectCB1 = findViewById(R.id.questionFourCorrect1);
+        CheckBox questionFourCorrectCB2 = findViewById(R.id.questionFourCorrect2);
+
+        // Check if correct checkbox was clicked
+        if ((questionFourCorrectCB1.isChecked()) && (questionFourCorrectCB2.isChecked())) {
+            question4Score = 1;
+        } else {
+            question4Score = 0;
+        }
+    }
+
+    // Checks the radioButton answers for question 5
+    public void question5RadioButton(View view) {
+        // Import correct radio buttons for question 5
+        RadioButton questionFiveCorrectRB = findViewById(R.id.questionFiveCorrect);
+
+        // Check if correct radio button was clicked
+        if (questionFiveCorrectRB.isChecked()) {
+            question5Score = 1;
+        } else {
+            question5Score = 0;
+        }
+    }
+
+    // Checks the radioButton answers for question 6
+    public void question6RadioButton(View view) {
+        // Import radio buttons for question 6
+        RadioButton questionSixCorrectRB = findViewById(R.id.questionSixCorrect);
+
+        // Check if correct radio button was clicked
+        if (questionSixCorrectRB.isChecked()) {
+            question6Score = 1;
+        } else {
+            question6Score = 0;
+        }
+    }
+
+    // Checks the radioButton answers for question 7
+    public void question7CheckBox(View view) {
+        // Import radio buttons for question 7
+        CheckBox questionSevenCorrectCB1 = findViewById(R.id.question7Correct1);
+        CheckBox questionSevenCorrectCB2 = findViewById(R.id.question7Correct2);
+        CheckBox questionSevenCorrectCB3 = findViewById(R.id.question7Correct3);
+
+        // Check if correct checkbox was clicked button was clicked
+        if ((questionSevenCorrectCB1.isChecked()) && (questionSevenCorrectCB2.isChecked()) && (questionSevenCorrectCB3.isChecked())) {
+            question7Score = 1;
+        } else {
+            question7Score = 0;
+        }
+    }
+
+    // Checks the radioButton answers for question 8
+    public int question8EditText() {
+        // Import radio buttons for question 8
+        EditText questionEightCorrect = findViewById(R.id.question8Answer);
+
+        String question8AnswerString = questionEightCorrect.getText().toString();
+
+        // Check if input is 40
+        if (question8AnswerString.equals("40")) {
+            question8Score = 1;
+        } else {
+            question8Score = 0;
+        }
+
+        return question8Score;
+    }
+
+    // Checks the radioButton answers for question 9
+    public void question9RadioButton(View view) {
+        // Import radio buttons for question 9
+        RadioButton questionNineCorrectRB = findViewById(R.id.questionNineCorrect);
+
+        // Check if correct radio button was clicked
+        if (questionNineCorrectRB.isChecked()) {
+            question9Score = 1;
+        } else {
+            question9Score = 0;
+        }
+    }
+
+    // Checks the radioButton answers for question 10
+    public void question10RadioButton(View view) {
+        // Import radio buttons for question 10
+        RadioButton questionTenCorrectRB = findViewById(R.id.questionTenCorrect);
+
+        // Check if correct radio button was clicked
+        if (questionTenCorrectRB.isChecked()) {
+            question10Score = 1;
+        } else {
+            question10Score = 0;
+        }
+    }
+
+    public int calculateCorrectAnswers() {
+        // calls the questionThreeEditTextView method to retrieve the score for question 3
+        question3Score = question3EditTextView();
+        question8Score = question8EditText();
+
+        // Adds all of the correct answers
+        correctAnswers = (question1Score + question2Score + question3Score + question4Score + question5Score + question6Score + question7Score +
+                question8Score + question9Score + question10Score);
+        return correctAnswers;
     }
 
     /**
-     * quiz question 2
+     * Calculates the final percentage of correct answers
+     * <p>
+     * The percentCorrect is converted to an integer to cut off any decimals
+     *
+     * @param answersCorrect passes in the answers correct and converts it to a double as there will be decimals in the final calculation
+     * @param questionTotal  passes in the total questions and converts it to a double as there will be decimals in the final calculation
+     * @return returns the percentage of correct answers
      */
+    public int calculateFinalScore(int answersCorrect, int questionTotal) {
+        int percentCorrect = (int) (((double) answersCorrect / (double) questionTotal) * 100);
+        return percentCorrect;
+    }
 
-    public boolean isQuizQuestion2Correct() {
-        CheckBox isMeter = (CheckBox) findViewById(R.id.checkbox_meter);
-        boolean isMeterChecked = isMeter.isChecked();
-
-        CheckBox isAmmeter = (CheckBox) findViewById(R.id.checkbox_ammeter);
-        boolean isAmmeterChecked = isAmmeter.isChecked();
-
-        CheckBox isOhm = (CheckBox) findViewById(R.id.checkbox_ohm);
-        boolean isOhmChecked = isOhm.isChecked();
-
-        if (isMeterChecked) {
-            return false;
-        }
-
-        if (isOhmChecked) {
-            return false;
-        }
-        if (isAmmeterChecked) {
-            return true;
-        }
-
-        return false;
+    // method to display the Toast of the final score percentage
+    public void displayMessage() {
+        Toast.makeText(this, "Your final score is " + calculateFinalScore(calculateCorrectAnswers(), totalQuestions) + "%", Toast.LENGTH_SHORT).show();
     }
 
     /**
-     * quiz question 1
+     * Called from the onClick for the submit_answers_button in activity_main.xml
+     * Clears the radioButtons and resets the correctAnswers variable to 0 when the Reset button is pressed
      */
-
-
-    public void onRadioButtonClicked(View view) {
-        boolean checked = ((RadioButton) view).isChecked();
-        isQuestion1Correct = false;
-        // Check which radio button was clicked
-        switch (view.getId()) {
-            case R.id.radioOption1:
-                if (checked)
-                    isQuestion1Correct = true;
-                break;
-            case R.id.radioOption2:
-                if (checked)
-                    break;
-            case R.id.radioOption3:
-                if (checked)
-                    break;
-        }
+    public void resetScores(View view) {
+        Intent resetApp = getBaseContext().getPackageManager().getLaunchIntentForPackage(getBaseContext().getPackageName());
+        resetApp.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(resetApp);
     }
 
-    /**
-     * quiz question 4
-     */
 
-    public void onRadioButtonClickedQues4(View view) {
-        isQuestion4Correct = false;
-        boolean checked = ((RadioButton) view).isChecked();
-
-        // Check which radio button was clicked
-        switch (view.getId()) {
-            case R.id.radio2Option1:
-                if (checked)
-                    break;
-            case R.id.radio2Option2:
-                if (checked)
-                    isQuestion4Correct = true;
-                break;
-            case R.id.radio2Option3:
-                if (checked)
-                    break;
-        }
-    }
-
-    /**
-     * quiz question 5
-     */
-    public boolean isQuizQuestion5Correct() {
-        EditText textInputQ5 = (EditText) findViewById(R.id.editTextQuestion5);
-        boolean isAnswereCorrect = textInputQ5.getText().toString().equalsIgnoreCase("electricity is a flow of electrons");
-        return isAnswereCorrect;
-    }
 }

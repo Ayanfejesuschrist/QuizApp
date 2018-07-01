@@ -1,30 +1,77 @@
 <resources>
+
     <string name="app_name">Quiz App</string>
-    <!--Question 1 -->
-    <string name="Question1">Q1.What unit is Resistance measured in</string>
-    <string name="Q1option_1">Ammeter</string>
-    <string name="Q1option_2">Voltage</string>
-    <string name="Q1option_3">Ohms</string>
+    <!-- Topic header -->
+    <string name="topic">Physics Questions: Attempt All questions</string>
 
-    <!--Question 2 options-->
-    <string name="Question2">Q2.What unit is Current measured in </string>
-    <string name="Q2option_1">Meter</string>
-    <string name="Q2option_2">Ohm</string>
-    <string name="Q2option_3">Ammeter</string>
+    <!-- Question 1 -->
+    <string name="Question1">1)When a body falls freely under gravity, then the work done by the gravity is </string>
+    <string name="Question1Answer1">Negative</string>
+    <string name="Question1Answer2">Positive</string>
+    <string name="Question1Answer3"> Zero</string>
+    <string name="Question1Answer4">Infinity</string>
 
-    <!--Question 3 options-->
-    <string name="Question3">Q3.Electricity is a flow of ?</string>
+    <!-- Question 2 -->
+    <string name="Question2">2) When a body slides against a rough horizontal surface, the work done by friction is?</string>
+    <string name="Question2Answer1">Negative</string>
+    <string name="Question2Answer2">Positive</string>
+    <string name="Question2Answer3">Zero</string>
+    <string name="Question2Answer4">Constant</string>
 
-    <!--Question 4 options-->
-    <string name="Question4">Q4.A cell or battery supplies ?</string>
-    <string name="Q4option_1">Alternating current</string>
-    <string name="Q4option_2">Direct current</string>
-    <string name="Q4option_3">Indirect currrent</string>
+    <!-- question 3 -->
+    <string name="Question3">3) Nuclear sizes are expressed in a unit named?</string>
+    <string name="Question3Hint">Fermi, Angstrom , Tesla or Newton</string>
 
-    <!--Question 5 options-->
-    <string name="Question5">Q5.What is Electricity?</string>
+    <!-- Question 4 -->
+    <string name="Question4">4) A gardener pushes a lawn roller through a distance of 20m. If he applies a force of 20kg weight in a direction inclined at 60° to the ground, find the work done by him. (g=9.8m/s2)?</string>
+    <string name="Question4Answer1">400J</string>
+    <string name="Question4Answer2">2514J</string>
+    <string name="Question4Answer3">1960J</string>
+    <string name="Question4Answer4">1960J</string>
 
-    <string name="submit_button">Submit</string>
+    <!-- Question 5 -->
+    <string name="Question5">5) A person is holding a bucket by applying a force of 10N. He moves a horizontal distance of 5m and then climbs up a vertical distance of 10m. Find the total work done by him?</string>
+    <string name="Question5Answer1">50J</string>
+    <string name="Question5Answer2">100J</string>
+    <string name="Question5Answer3">200J</string>
+    <string name="Question5Answer4">150J</string>
 
+    <!-- Question 6 -->
+    <string name="Question6">6) A bullet fired from a gun can pierce a target due to its?</string>
+    <string name="Question6Answer1">Mechanical energy</string>
+    <string name="Question6Answer2">Heat energy</string>
+    <string name="Question6Answer3"> Kinetic energy</string>
+    <string name="Question6Answer4">Acceleration</string>
 
+    <!-- Question 7 -->
+    <string name="Question7">7) . A truck and a car are moving with equal velocity. On applying brakes, both will stop after certain distance, then?</string>
+    <string name="Question7Answer1">Car will cover less distance before stopping</string>
+    <string name="Question7Answer2">Car will cover less distance before stopping</string>
+    <string name="Question7Answer3">Car will cover less distance before stopping</string>
+    <string name="Question7Answer4"> Both will cover equal distance</string>
+    <string name="Question7Answer5">Truck will cover less distance before stopping</string>
+
+    <!-- Question 8 -->
+    <string name="Question8">8) Consider a car moving along a straight horizontal road with a speed of 72km/h. If the coefficient of static friction between the tyres and the road is 0.5, the shortest distance in which the car can be stopped is (g=10m/s2)</string>
+    <string name="Question8Hint">Answer..</string>
+
+    <!-- Question 9 -->
+    <string name="Question9">9) A person sitting in an open car moving at constant velocity throws a ball vertically into air, the balls falls</string>
+    <string name="Question9Answer1">In the car ahead of the person</string>
+    <string name="Question9Answer2"> Outside the car</string>
+    <string name="Question9Answer3">In the car behind the person</string>
+    <string name="Question9Answer4"> Exactly in the hand of thrower</string>
+
+    <!-- Question 10 -->
+    <string name="Question10">10) A boy of 50kg is standing in a lift moving down with an acceleration 9.8m/s2. The apparent weight of the boy is</string>
+    <string name="Question10Answer1"> (50×9.8)N</string>
+    <string name="Question10Answer2">50/9.8N</string>
+    <string name="Question10Answer3"> Zero</string>
+    <string name="Question10Answer4">50N</string>
+
+    <!-- Submit Button -->
+    <string name="SubmitButton">Submit</string>
+
+    <!-- Reset Button -->
+    <string name="ResetButton">Reset</string>
 </resources>
